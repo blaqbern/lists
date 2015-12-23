@@ -1,17 +1,18 @@
 module.exports = {
   "rules": {
-    "indent": [ 2, 2 ],
-    "quotes": [ 2, "single" ],
-    "linebreak-style": [ 2, "unix" ],
-    "semi": [ 2, "always" ],
-    "react/display-name": [ 1, { "acceptTranspilerName": true } ],
-    "react/forbid-prop-types": 1,
+    "indent": [2, 2, { "SwitchCase": 1 }],
+    "quotes": [2, "single"],
+    "linebreak-style": [2, "unix"],
+    "semi": [2, "always"],
+    "comma-dangle": 0,
+    "react/display-name": [1, { "acceptTranspilerName": true }],
+    "react/forbid-prop-types": 0,
     "react/jsx-boolean-value": 1,
     "react/jsx-closing-bracket-location": 1,
     "react/jsx-curly-spacing": 1,
     "react/jsx-handler-names": 1,
-    "react/jsx-indent-props": 1,
-    "react/jsx-key": 1,
+    "react/jsx-indent-props": [1, 2],
+    "react/jsx-key": 0,
     "react/jsx-max-props-per-line": 0,
     "react/jsx-no-bind": 1,
     "react/jsx-no-duplicate-props": 1,
@@ -51,5 +52,5 @@ module.exports = {
     "experimentalObjectRestSpread": true
   },
   "parser": "babel-eslint",
-  "plugins": [ "react" ]
+  "plugins": ["react"]
 };

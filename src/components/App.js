@@ -1,20 +1,15 @@
-'use strict';
-
 import React from 'react';
 import Header from './Header';
 import MainContent from './MainContent';
 import Footer from './Footer';
 
-class App extends React.Component {
-  render() {
-    return(
-      <div className="app">
-        <Header title="App Title!" />
-        <MainContent />
-        <Footer />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="app">
+    <Header title="App Title, suckas!" />
+    <MainContent />
+    <Footer />
+  </div>
+);
+App.contextTypes = { store: React.PropTypes.object };
 
 export default App;
