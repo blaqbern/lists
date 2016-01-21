@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component, PropTypes } from 'react';
+import { render } from 'react-dom';
 import App from './components/App';
-import {createStore} from 'redux';
+import { createStore } from 'redux';
 import list from './reducers/list';
 
-class Provider extends React.Component {
+class Provider extends Component {
   getChildContext() {
     return { store: this.props.store };
   }
@@ -12,10 +12,13 @@ class Provider extends React.Component {
     return this.props.children;
   }
 }
-Provider.propTypes = { children: React.PropTypes.node, store: React.PropTypes.object };
 Provider.childContextTypes = { store: React.PropTypes.object };
+Provider.propTypes = {
+  children: PropTypes.node,
+  store: PropTypes.object
+};
 
-ReactDOM.render(
+render(
   <Provider store={createStore(list)}>
     <App />
   </Provider>,

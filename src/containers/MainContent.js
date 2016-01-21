@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import Item from '../components/Item';
 
-class MainContent extends React.Component {
+class MainContent extends Component {
   componentDidMount() {
-    const store = this.context.store;
+    const { store } = this.context;
     this.unsubscribe = store.subscribe(() => this.forceUpdate());
   }
   componentWillUnmount() {
     this.unsubscribe();
   }
   render() {
-    const store = this.context.store;
+    const { store } = this.context;
     const state = store.getState();
     return (
       <div className="main-content">
@@ -45,6 +45,6 @@ class MainContent extends React.Component {
     );
   }
 }
-MainContent.contextTypes = { store: React.PropTypes.object };
+MainContent.contextTypes = { store: PropTypes.object };
 
 export default MainContent;
