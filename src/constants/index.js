@@ -1,7 +1,5 @@
-export const ActionTypes = {
-  ADD_LIST: 'ADD_LIST',
-  REMOVE_LIST: 'REMOVE_LIST',
-  ADD_ITEM: 'ADD_ITEM',
-  REMOVE_ITEM: 'REMOVE_ITEM',
-  TOGGLE_COMPLETED: 'TOGGLE_COMPLETED'
-};
+export const ADD_LIST = 'ADD_LIST';
+export const REMOVE_LIST = 'REMOVE_LIST';
+export const ADD_ITEM = 'ADD_ITEM';
+export const REMOVE_ITEM = 'REMOVE_ITEM';
+export const TOGGLE_COMPLETED = 'TOGGLE_COMPLETED';

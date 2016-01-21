@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Item from '../components/Item';
+import * as actions from '../actions';
 
 class MainContent extends Component {
   componentDidMount() {
@@ -18,10 +19,9 @@ class MainContent extends Component {
         <button
           onClick={
             () => {
-              store.dispatch({
-                type: 'ADD_ITEM',
-                text: this.newItemInput.value,
-              });
+              store.dispatch(
+                actions.addItem(this.newItemInput.value)
+              );
               this.newItemInput.value = '';
             }
           }
@@ -34,10 +34,9 @@ class MainContent extends Component {
             text={item.text}
             completed={item.completed}
             handleItemClick={() =>
-              store.dispatch({
-                type: 'TOGGLE_COMPLETED',
-                id: item.id
-              })
+              store.dispatch(
+                actions.toggleCompleted(item.id)
+              )
             }
           />
         )}
