@@ -1,15 +1,21 @@
+import '../styles/item.css';
 import React from 'react';
 
-const Item = (
-  id,
+const Item = ({
   text,
-  completed
-) => {
+  completed,
+  handleItemClick
+}) => {
   return (
-    <p style={{ textDecoration: completed ? 'line-through' : 'normal' }}>
-      {text}
-    </p>
+    <div className="item">
+      <p
+        onClick={handleItemClick}
+        style={{ textDecoration: completed ? 'line-through' : 'none' }}
+      >
+        {text}
+      </p>
+    </div>
   );
 };
 
-export {Item};
+export default Item;

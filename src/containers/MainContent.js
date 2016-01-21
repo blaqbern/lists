@@ -1,5 +1,5 @@
 import React from 'react';
-import List from './List';
+import Item from '../components/Item';
 
 class MainContent extends React.Component {
   componentDidMount() {
@@ -14,23 +14,33 @@ class MainContent extends React.Component {
     const state = store.getState();
     return (
       <div className="main-content">
-        {state.map(
-          (list) => <List key={list.id} name={list.name} items={list.items} />
-        )}
-        <input ref={(node) => this.listNameInput = node} />
+        <input ref={(node) => this.newItemInput = node} />
         <button
           onClick={
             () => {
               store.dispatch({
-                type: 'ADD_LIST',
-                name: this.listNameInput.value,
+                type: 'ADD_ITEM',
+                text: this.newItemInput.value,
               });
-              this.listNameInput.value = '';
+              this.newItemInput.value = '';
             }
           }
         >
-          {'Create a new List'}
+          {'+'}
         </button>
+        {state.map((item) =>
+          <Item
+            key={item.id}
+            text={item.text}
+            completed={item.completed}
+            handleItemClick={() =>
+              store.dispatch({
+                type: 'TOGGLE_COMPLETED',
+                id: item.id
+              })
+            }
+          />
+        )}
       </div>
     );
   }

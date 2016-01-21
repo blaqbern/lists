@@ -1,10 +1,8 @@
-'use strict';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import {createStore} from 'redux';
-import lists from './reducers/lists';
+import list from './reducers/list';
 
 class Provider extends React.Component {
   getChildContext() {
@@ -18,7 +16,7 @@ Provider.propTypes = { children: React.PropTypes.node, store: React.PropTypes.ob
 Provider.childContextTypes = { store: React.PropTypes.object };
 
 ReactDOM.render(
-  <Provider store={createStore(lists)}>
+  <Provider store={createStore(list)}>
     <App />
   </Provider>,
   document.getElementById('app')
