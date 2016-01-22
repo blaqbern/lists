@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import App from './components/App';
 import { createStore } from 'redux';
 import list from './reducers/list';
+import DevTools from './containers/DevTools';
 
 class Provider extends Component {
   getChildContext() {
@@ -18,8 +19,10 @@ Provider.propTypes = {
   store: PropTypes.object
 };
 
+const finalCreateStore = DevTools.instrument()(createStore);
+
 render(
-  <Provider store={createStore(list)}>
+  <Provider store={finalCreateStore(list)}>
     <App />
   </Provider>,
   document.getElementById('app')
