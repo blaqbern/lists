@@ -1,13 +1,12 @@
 import item from './item';
 
-let nextId = 0;
 const list = (state = [], action) => {
   switch(action.type) {
     case 'ADD_ITEM':
       return [
         ...state,
         {
-          id: nextId++,
+          id: action.id,
           text: action.text,
           completed: false,
           tags: []
@@ -15,10 +14,7 @@ const list = (state = [], action) => {
       ];
 
     case 'REMOVE_ITEM':
-      return [
-        ...state.slice(0, action.id),
-        ...state.slice(action.id + 1),
-      ];
+      return state.filter((item) => item.id !== action.id);
 
     case 'TOGGLE_COMPLETED':
       return state.map((i) => item(i, action));

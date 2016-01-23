@@ -30,6 +30,11 @@ class MainContent extends Component {
               actions.toggleCompleted(id)
             )
           }
+          handleRemoveClick={
+            (id) => store.dispatch(
+              actions.removeItem(id)
+            )
+          }
         />
       </div>
     );

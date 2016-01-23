@@ -3,7 +3,8 @@ import Item from './Item';
 
 const List = ({
   items,
-  handleItemClick
+  handleItemClick,
+  handleRemoveClick
 }) => {
   return (
     <ul>
@@ -14,6 +15,9 @@ const List = ({
             completed={item.completed}
             handleClick={() => handleItemClick(item.id)}
           />
+          <button onClick={() => handleRemoveClick(item.id)}>
+            {'remove'}
+          </button>
         </li>
       )}
     </ul>
