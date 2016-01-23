@@ -4,13 +4,13 @@ import React from 'react';
 const Item = ({
   text,
   completed,
-  handleItemClick
+  handleClick
 }) => {
   return (
     <div className="item">
       <p
-        onClick={handleItemClick}
         style={{ textDecoration: completed ? 'line-through' : 'none' }}
+        onClick={handleClick}
       >
         {text}
       </p>
