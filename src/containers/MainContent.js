@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import List from '../components/List';
+import Item from '../components/Item';
 import AddItem from '../components/AddItem';
 import * as actions from '../actions';
 
@@ -23,19 +23,30 @@ class MainContent extends Component {
             )
           }
         />
-        <List
-          items={state}
-          handleItemClick={
-            (id) => store.dispatch(
-              actions.toggleCompleted(id)
-            )
-          }
-          handleRemoveClick={
-            (id) => store.dispatch(
-              actions.removeItem(id)
-            )
-          }
-        />
+        <ul>
+          {state.map((item) =>
+            <li key={item.id}>
+              <Item
+                text={item.text}
+                completed={item.completed}
+                handleClick={
+                  () => store.dispatch(
+                    actions.toggleCompleted(item.id)
+                  )
+                }
+              />
+              <button
+                onClick={
+                  () => store.dispatch(
+                    actions.removeItem(item.id)
+                  )
+                }
+              >
+                {'remove'}
+              </button>
+            </li>
+          )}
+        </ul>
       </div>
     );
   }
