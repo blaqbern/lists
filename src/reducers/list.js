@@ -5,22 +5,22 @@ const list = (state = [], action) => {
     case 'ADD_ITEM':
       return [
         ...state,
-        {
-          id: action.id,
-          text: action.text,
-          completed: false,
-          tags: []
-        }
+        item(undefined, action)
       ];
 
     case 'REMOVE_ITEM':
-      return state.filter((item) => item.id !== action.id);
+      return state.filter((i) => i.id !== action.id);
 
     case 'TOGGLE_COMPLETED':
-      return state.map((i) => item(i, action));
-
     case 'ADD_TAG':
-      return state.map((i) => item(i, action));
+      return state.map(
+        (i) => {
+          if(i.id === action.id) {
+            return item(i, action);
+          }
+          return i;
+        }
+      );
 
     default:
       return state;
