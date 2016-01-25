@@ -6,6 +6,7 @@ export const addItem = (text) => {
   return {
     type: types.ADD_ITEM,
     id: nextId++,
+    tags: [],
     text
   };
 };
@@ -22,5 +23,13 @@ export const toggleCompleted = (id) => {
   return {
     type: types.TOGGLE_COMPLETED,
     id
+  };
+};
+
+export const addTag = (id, text) => {
+  return {
+    type: types.ADD_TAG,
+    id,
+    text,
   };
 };

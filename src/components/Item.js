@@ -4,7 +4,8 @@ import React from 'react';
 const Item = ({
   text,
   completed,
-  handleClick
+  handleClick,
+  tags
 }) => {
   return (
     <div className="item">
@@ -14,6 +15,11 @@ const Item = ({
       >
         {text}
       </p>
+      <ul>
+        {tags.map(
+          (tag, index) => <li key={index}>{tag}</li>
+        )}
+      </ul>
     </div>
   );
 };

@@ -34,6 +34,14 @@ class MainContent extends Component {
                     actions.toggleCompleted(item.id)
                   )
                 }
+                tags={item.tags}
+              />
+              <AddItem
+                handleAddItem={
+                  (text) => store.dispatch(
+                    actions.addTag(item.id, text)
+                  )
+                }
               />
               <button
                 onClick={

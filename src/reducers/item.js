@@ -8,6 +8,17 @@ const item = (state = {}, action) => {
       }
       return state;
 
+    case 'ADD_TAG':
+      if(state.id === action.id) {
+        return Object.assign({}, state,{
+          tags: [
+            ...state.tags,
+            action.text
+          ]
+        });
+      }
+      return state;
+
     default:
       return state;
   }

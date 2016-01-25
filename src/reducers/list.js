@@ -19,6 +19,9 @@ const list = (state = [], action) => {
     case 'TOGGLE_COMPLETED':
       return state.map((i) => item(i, action));
 
+    case 'ADD_TAG':
+      return state.map((i) => item(i, action));
+
     default:
       return state;
   }
