@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { render } from 'react-dom';
 import App from './components/App';
 import { createStore } from 'redux';
-import list from './reducers/list';
+import rootReducer from './reducers';
 import DevTools from './containers/DevTools';
 
 class Provider extends Component {
@@ -22,7 +22,7 @@ Provider.propTypes = {
 const finalCreateStore = DevTools.instrument()(createStore);
 
 render(
-  <Provider store={finalCreateStore(list)}>
+  <Provider store={finalCreateStore(rootReducer)}>
     <App />
   </Provider>,
   document.getElementById('app')

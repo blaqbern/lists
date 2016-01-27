@@ -1,19 +1,31 @@
 import React, { Component, PropTypes } from 'react';
 import Item from '../components/Item';
 import AddItem from '../components/AddItem';
+import Footer from '../components/Footer';
 import * as actions from '../actions';
 
 class MainContent extends Component {
   componentDidMount() {
     const { store } = this.context;
     this.unsubscribe = store.subscribe(() => this.forceUpdate());
+    store.dispatch(
+      actions.init()
+    );
   }
   componentWillUnmount() {
     this.unsubscribe();
   }
+  getVisibleItems(items, visibilityFilter) {
+    return items.filter(
+      (item) =>
+      visibilityFilter === 'SHOW_ALL' ||
+      item.tags.indexOf(visibilityFilter) !== -1
+    );
+  }
   render() {
     const { store } = this.context;
     const state = store.getState();
+    const visibleItems = this.getVisibleItems(state.list, state.visibilityFilter);
     return (
       <div className="main-content">
         <AddItem
@@ -24,7 +36,7 @@ class MainContent extends Component {
           }
         />
         <ul>
-          {state.map((item) =>
+          {visibleItems.map((item) =>
             <li key={item.id}>
               <Item
                 text={item.text}
@@ -55,6 +67,7 @@ class MainContent extends Component {
             </li>
           )}
         </ul>
+        <Footer tags={state.tags} />
       </div>
     );
   }
