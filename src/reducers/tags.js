@@ -3,7 +3,7 @@ const initialState = [
   'Home Depot',
   'Costco',
   'Amazon',
-  'Grocery Store'
+  'Grocery Store',
 ];
 
 const tags = (state = [], action) => {
@@ -14,7 +14,7 @@ const tags = (state = [], action) => {
     case 'ADD_TAG':
       return [
         ...state,
-        action.text
+        action.text,
       ];
 
     default:

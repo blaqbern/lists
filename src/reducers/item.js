@@ -5,7 +5,7 @@ const item = (state = {}, action) => {
         id: action.id,
         text: action.text,
         completed: false,
-        tags: []
+        tags: [],
       };
 
     case 'TOGGLE_COMPLETED':
@@ -17,7 +17,7 @@ const item = (state = {}, action) => {
       return Object.assign({}, state,{
         tags: [
           ...state.tags,
-          action.text
+          action.text,
         ]
       });
 

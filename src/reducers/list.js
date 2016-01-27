@@ -5,7 +5,7 @@ const list = (state = [], action) => {
     case 'ADD_ITEM':
       return [
         ...state,
-        item(undefined, action)
+        item(undefined, action),
       ];
 
     case 'REMOVE_ITEM':

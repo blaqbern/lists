@@ -6,7 +6,7 @@ import { combineReducers } from 'redux';
 const rootReducer = combineReducers({
   list,
   tags,
-  visibilityFilter
+  visibilityFilter,
 });
 
 export default rootReducer;

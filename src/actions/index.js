@@ -10,21 +10,21 @@ export const addItem = (text) => {
     type: types.ADD_ITEM,
     id: nextId++,
     tags: [],
-    text
+    text,
   };
 };
 
 export const removeItem = (id) => {
   return {
     type: types.REMOVE_ITEM,
-    id
+    id,
   };
 };
 
 export const setVisibilityFilter = (filter) => {
   return {
     type: types.SET_VISIBILITY_FILTER,
-    filter
+    filter,
   };
 };
 
@@ -32,7 +32,7 @@ export const setVisibilityFilter = (filter) => {
 export const toggleCompleted = (id) => {
   return {
     type: types.TOGGLE_COMPLETED,
-    id
+    id,
   };
 };
 

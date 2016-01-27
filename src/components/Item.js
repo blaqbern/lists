@@ -5,7 +5,7 @@ const Item = ({
   text,
   completed,
   handleClick,
-  tags
+  tags,
 }) => {
   return (
     <div className="item">
@@ -27,7 +27,7 @@ Item.propTypes = {
   completed: PropTypes.bool,
   handleClick: PropTypes.func,
   tags: PropTypes.array,
-  text: PropTypes.string
+  text: PropTypes.string,
 };
 
 export default Item;
