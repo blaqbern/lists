@@ -1,5 +1,5 @@
 import '../styles/item.css';
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const Item = ({
   text,
@@ -22,6 +22,12 @@ const Item = ({
       </ul>
     </div>
   );
+};
+Item.propTypes = {
+  completed: PropTypes.bool,
+  handleClick: PropTypes.func,
+  tags: PropTypes.array,
+  text: PropTypes.string
 };
 
 export default Item;

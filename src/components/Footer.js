@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Filter from '../containers/Filter';
 
 const Footer = ({
@@ -16,5 +16,6 @@ const Footer = ({
     </ul>
   </div>
 );
+Footer.propTypes = { tags: PropTypes.array };
 
 export default Footer;

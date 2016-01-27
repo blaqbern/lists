@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const AddItem = ({
   handleAddItem
@@ -20,5 +20,6 @@ const AddItem = ({
     </div>
   );
 };
+AddItem.propTypes = { handleAddItem: PropTypes.func };
 
 export default AddItem;
