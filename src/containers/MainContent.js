@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Item from '../components/Item';
-import AddItem from '../components/AddItem';
+import AddNew from '../components/AddNew';
 import Footer from '../components/Footer';
 import * as actions from '../actions';
 
@@ -28,8 +28,9 @@ class MainContent extends Component {
     const visibleItems = this.getVisibleItems(state.list, state.visibilityFilter);
     return (
       <div className="main-content">
-        <AddItem
-          handleAddItem={
+        <AddNew
+          what="item"
+          handleAddClick={
             (text) => store.dispatch(
               actions.addItem(text)
             )
@@ -48,8 +49,9 @@ class MainContent extends Component {
                 }
                 tags={item.tags}
               />
-              <AddItem
-                handleAddItem={
+              <AddNew
+                what="tag"
+                handleAddClick={
                   (text) => store.dispatch(
                     actions.addTag(item.id, text)
                   )
