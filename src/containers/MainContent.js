@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Item from '../components/Item';
 import AddNew from '../components/AddNew';
+import SelectBox from '../components/SelectBox';
 import Footer from '../components/Footer';
 import * as actions from '../actions';
 
@@ -49,8 +50,20 @@ class MainContent extends Component {
                 }
                 tags={item.tags}
               />
+              <SelectBox
+                what={'tag'}
+                options={[
+                  ...state.defaultTags,
+                  ...state.tags,
+                ]}
+                handleSelect={
+                  (selected) => store.dispatch(
+                    actions.addTag(item.id, selected)
+                  )
+                }
+              />
               <AddNew
-                what="tag"
+                what="custom tag"
                 handleAddClick={
                   (text) => store.dispatch(
                     actions.addTag(item.id, text)

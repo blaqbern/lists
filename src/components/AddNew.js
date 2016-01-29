@@ -11,7 +11,7 @@ const AddNew = ({
       <button
         onClick={
           () => {
-            handleAddClick(inputText.value);
+            handleAddClick(inputText.value.trim());
             inputText.value = '';
           }
         }

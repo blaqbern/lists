@@ -1,21 +1,14 @@
-const initialState = [
-  'Target',
-  'Home Depot',
-  'Costco',
-  'Amazon',
-  'Grocery Store',
-];
-
 const tags = (state = [], action) => {
   switch(action.type) {
-    case 'INIT':
-      return initialState;
-
     case 'ADD_TAG':
-      return [
-        ...state,
-        action.text,
-      ];
+      const tag = action.text.replace(' ', '_').toUpperCase();
+      if (state.indexOf(tag) === -1) {
+        return [
+          ...state,
+          tag,
+        ];
+      }
+      return state;
 
     default:
       return state;

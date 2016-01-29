@@ -14,12 +14,16 @@ const item = (state = {}, action) => {
       });
 
     case 'ADD_TAG':
-      return Object.assign({}, state,{
-        tags: [
-          ...state.tags,
-          action.text,
-        ]
-      });
+      const tag = action.text.replace(' ', '_').toUpperCase();
+      if (state.tags.indexOf(tag) === -1) {
+        return Object.assign({}, state,{
+          tags: [
+            ...state.tags,
+            tag,
+          ]
+        });
+      }
+      return state;
 
     default:
       return state;
