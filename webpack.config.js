@@ -1,7 +1,7 @@
 'use strict';
 
 var path = require('path');
-var cssnext = require('postcss-cssnext');
+var cssModulesValues = require('postcss-modules-values');
 var webpack = require('webpack');
 var webpackDevServer = require('webpack-dev-server');
 
@@ -25,17 +25,21 @@ module.exports = {
     ],
     loaders: [
       { test: /\.js$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
-      { test: /\.css$/, loaders: ['style', 'css', 'postcss'], exclude: /node_modules/ }
+      {
+        test: /\.css$/,
+        loaders: [
+          'style',
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          'postcss'
+        ]
+      }
     ]
   },
   eslint: {
     configFile: '.eslintrc.js'
   },
   postcss: function() {
-    return [cssnext];
-  },
-  cssnext: {
-    browsers: 'last 2 versions'
+    return [cssModulesValues];
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()

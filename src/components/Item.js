@@ -1,4 +1,3 @@
-import '../styles/item.css';
 import React, { PropTypes } from 'react';
 
 const Item = ({

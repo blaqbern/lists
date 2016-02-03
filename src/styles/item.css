@@ -1,7 +1,0 @@
-:root {
-  --badegg: #bade66;
-}
-
-.item {
-  border: 1px solid var(--badegg);
-}
