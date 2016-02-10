@@ -7,10 +7,12 @@ const SelectBox = ({
 }) => {
   return (
     <div>
-      {`Select a ${what} to add`}
+      <p>{`Select a ${what} to add`}</p>
+      <ul>
       {options.map(
-        (o) =>
-          <p
+        (o, index) =>
+          <li
+            key={index}
             onClick={
               () => handleSelect(o)
             }
@@ -19,8 +21,9 @@ const SelectBox = ({
             }}
           >
             {`<${o}>`}
-          </p>
+          </li>
       )}
+      </ul>
     </div>
   );
 };
