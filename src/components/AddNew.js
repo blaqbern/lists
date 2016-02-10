@@ -7,7 +7,10 @@ const AddNew = ({
   let inputText;
   return (
     <div>
-      <input ref={(node) => inputText = node} />
+      <input
+        ref={(node) => inputText = node}
+        placeholder={`add new ${what}`}
+      />
       <button
         onClick={
           () => {
@@ -16,7 +19,7 @@ const AddNew = ({
           }
         }
       >
-        {`add new ${what}`}
+        {'+'}
       </button>
     </div>
   );
