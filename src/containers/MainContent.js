@@ -52,10 +52,7 @@ class MainContent extends Component {
               />
               <SelectBox
                 what={'tag'}
-                options={[
-                  ...state.defaultTags,
-                  ...state.tags,
-                ]}
+                options={state.defaultTags}
                 handleSelect={
                   (selected) => store.dispatch(
                     actions.addTag(item.id, selected)
