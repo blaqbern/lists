@@ -32,6 +32,10 @@ module.exports = {
           'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
           'postcss'
         ]
+      },
+      {
+        test: /\.otf$/,
+        loaders: ['url?limit=10000&mimetype=font/opentype']
       }
     ]
   },
