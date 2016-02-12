@@ -1,0 +1,10 @@
+@value paper from './shared/colors.css';
+
+.mainContent {
+  position: relative;
+  width: 1000px;
+  left: 50%;
+  margin-left: -500px;
+  padding: 20px;
+  background: paper;
+}

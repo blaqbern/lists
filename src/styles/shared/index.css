@@ -1,0 +1,40 @@
+@value natural from './colors.css';
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../../static/fonts/FiraSans-Regular.otf');
+}
+@font-face {
+  font-family: 'Fira Sans Italic';
+  src: url('../../static/fonts/FiraSans-Italic.otf');
+}
+@font-face {
+  font-family: 'Fira Sans Extra Light';
+  src: url('../../static/fonts/FiraSans-ExtraLight.otf');
+}
+@font-face {
+  font-family: 'Fira Sans Extra Light Italic';
+  src: url('../../static/fonts/FiraSans-ExtraLightItalic.otf');
+}
+
+:global(*) {
+  box-sizing: border-box;
+  font-family: 'Fira Sans Extra Light', serif;
+}
+:global(li) {
+  list-style: none;
+}
+:global(body) {
+  min-width: 100%;
+  min-height: 100%;
+  background: natural;
+  margin: 0;
+  padding: 0;
+}
+
+@value defaultRadius: 2px;
+
+.spacing {
+  padding: 8px;
+  margin: 8px;
+}

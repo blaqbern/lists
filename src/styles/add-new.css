@@ -1,0 +1,31 @@
+@value shared: './shared/index.css';
+@value spacing: spacing from shared;
+@value blue, natural from './shared/colors.css';
+
+.root {
+  font-family: 'Fira Sans Extra Light';
+  composes: spacing;
+  margin: 0;
+}
+
+.input {
+  composes: spacing;
+  font-size: 1.25rem;
+  border: 1px solid blue;
+  border-radius: 2px;
+  margin-right: 0;
+}
+
+input:active {
+  box-shadow: none;
+}
+
+.button {
+  composes: spacing;
+  background: blue;
+  color: natural;
+  font-size: 1.25rem;
+  border: 1px solid blue;
+  border-radius: 0 2px 2px 0;
+  margin-left: 0;
+}

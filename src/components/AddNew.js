@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import styles from '../styles/add-new.css';
 
 const AddNew = ({
   handleAddClick,
@@ -10,6 +11,7 @@ const AddNew = ({
       <input
         ref={(node) => inputText = node}
         placeholder={`add new ${what}`}
+        className={styles.input}
       />
       <button
         onClick={
@@ -18,6 +20,7 @@ const AddNew = ({
             inputText.value = '';
           }
         }
+        className={styles.button}
       >
         {'+'}
       </button>

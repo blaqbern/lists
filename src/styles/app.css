@@ -1,0 +1,5 @@
+@import './shared/index.css';
+
+.app {
+  background: natural from './shared/colors';
+}

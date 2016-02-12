@@ -4,6 +4,7 @@ import AddNew from '../components/AddNew';
 import SelectBox from '../components/SelectBox';
 import Footer from '../components/Footer';
 import * as actions from '../actions';
+import styles from '../styles/main-content.css';
 
 class MainContent extends Component {
   componentDidMount() {
@@ -28,7 +29,7 @@ class MainContent extends Component {
     const state = store.getState();
     const visibleItems = this.getVisibleItems(state.list, state.visibilityFilter);
     return (
-      <div className="main-content">
+      <div className={styles.mainContent}>
         <AddNew
           what="item"
           handleAddClick={
