@@ -9,8 +9,8 @@ const defaults = [
   tags.GIANT,
 ];
 
-const defaultTags = (state=[], action) => {
-  switch(action.type) {
+const defaultTags = (state = [], action) => {
+  switch (action.type) {
     case 'INIT':
       return defaults;
 

@@ -1,7 +1,7 @@
 import item from './item';
 
 const list = (state = [], action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'ADD_ITEM':
       return [
         ...state,
@@ -15,7 +15,7 @@ const list = (state = [], action) => {
     case 'ADD_TAG':
       return state.map(
         (i) => {
-          if(i.id === action.id) {
+          if (i.id === action.id) {
             return item(i, action);
           }
           return i;

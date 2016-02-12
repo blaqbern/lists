@@ -16,7 +16,7 @@ class Provider extends Component {
 Provider.childContextTypes = { store: React.PropTypes.object };
 Provider.propTypes = {
   children: PropTypes.node,
-  store: PropTypes.object
+  store: PropTypes.object,
 };
 
 const finalCreateStore = DevTools.instrument()(createStore);

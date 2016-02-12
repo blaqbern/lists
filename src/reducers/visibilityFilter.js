@@ -1,5 +1,5 @@
 const visibilityFilter = (state = 'SHOW_ALL', action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'ADD_ITEM':
       return 'SHOW_ALL';
 

@@ -10,20 +10,21 @@ const item = (state = {}, action) => {
 
     case 'TOGGLE_COMPLETED':
       return Object.assign({}, state, {
-        completed: !state.completed
+        completed: !state.completed,
       });
 
-    case 'ADD_TAG':
+    case 'ADD_TAG': {
       const tag = action.text.replace(' ', '_').toUpperCase();
       if (state.tags.indexOf(tag) === -1) {
-        return Object.assign({}, state,{
+        return Object.assign({}, state, {
           tags: [
             ...state.tags,
             tag,
-          ]
+          ],
         });
       }
       return state;
+    }
 
     default:
       return state;

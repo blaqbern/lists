@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react';
 
-const Item = ({
+function Item({
   text,
   completed,
   handleClick,
   tags,
-}) => {
+}) {
   return (
     <div className="item">
       <p
@@ -21,7 +21,7 @@ const Item = ({
       </ul>
     </div>
   );
-};
+}
 Item.propTypes = {
   completed: PropTypes.bool,
   handleClick: PropTypes.func,

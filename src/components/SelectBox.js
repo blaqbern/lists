@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 
-const SelectBox = ({
+function SelectBox({
   handleSelect,
   options,
   what,
-}) => {
+}) {
   return (
     <div>
       <p>{`Select a ${what} to add`}</p>
@@ -16,9 +16,7 @@ const SelectBox = ({
               onClick={
                 () => handleSelect(o)
               }
-              style={{
-                'display': 'inline-block'
-              }}
+              style={{ display: 'inline-block' }}
             >
               {`<${o}>`}
             </li>
@@ -26,7 +24,7 @@ const SelectBox = ({
       </ul>
     </div>
   );
-};
+}
 SelectBox.propTypes = {
   handleSelect: PropTypes.func,
   options: PropTypes.array,
