@@ -1,33 +1,22 @@
-import React, { Component, PropTypes } from 'react';
-import * as actions from '../actions';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { setVisibilityFilter } from '../actions';
 
-class Filter extends Component {
-  componentDidMount() {
-    const { store } = this.context;
-    this.unsubscribe = store.subscribe(() => this.forceUpdate());
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
-
-  render() {
-    const { store } = this.context;
-    const { filter } = this.props;
-    return (
-      <div
-        onClick={
-          () => store.dispatch(
-            actions.setVisibilityFilter(filter)
-          )
-        }
-      >
-        {filter}
-      </div>
-    );
-  }
+function Filter({ filter, onFilterClick }) {
+  return (
+    <div onClick={onFilterClick}>
+      {filter}
+    </div>
+  );
 }
-Filter.contextTypes = { store: PropTypes.object };
 Filter.propTypes = { filter: PropTypes.string };
 
-export default Filter;
+function mapDispatchToProps(dispatch, ownProps) {
+  const { filter } = ownProps;
+  return { onFilterClick: () => dispatch(setVisibilityFilter(filter)) };
+}
+
+export default connect(
+  (state, ownProps) => Object.assign({}, ownProps),
+  mapDispatchToProps
+)(Filter);
