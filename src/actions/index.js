@@ -1,7 +1,9 @@
 import * as types from '../constants';
 
 // Initialize state
-export const init = () => ({ type: types.INIT });
+export function init() {
+  return { type: types.INIT };
+}
 
 // List actions
 let nextId = 0;

@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { init } from '../actions';
 import Header from '../components/Header';
 import List from './List';
@@ -21,6 +21,7 @@ class App extends Component {
     );
   }
 }
-App.propTypes = { dispatch: PropTypes.object };
+const { object } = React.PropTypes;
+App.propTypes = { dispatch: object };
 
 export default App;

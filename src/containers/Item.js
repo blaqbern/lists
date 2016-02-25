@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { addTag, removeItem, toggleCompleted } from '../actions';
 import SelectBox from '../components/SelectBox';
@@ -40,12 +40,13 @@ function Item({
     </div>
   );
 }
+const { object, func } = React.PropTypes;
 Item.propTypes = {
-  item: PropTypes.object,
-  handleItemClick: PropTypes.func,
-  handleTagSelect: PropTypes.func,
-  handleAddTagClick: PropTypes.func,
-  handleRemoveClick: PropTypes.func,
+  item: object,
+  handleItemClick: func,
+  handleTagSelect: func,
+  handleAddTagClick: func,
+  handleRemoveClick: func,
 };
 
 function mapStateToProps(state) {

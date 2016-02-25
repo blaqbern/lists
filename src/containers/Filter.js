@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { setVisibilityFilter } from '../actions';
 
@@ -9,7 +9,8 @@ function Filter({ filter, onFilterClick }) {
     </div>
   );
 }
-Filter.propTypes = { filter: PropTypes.string };
+const { string } = React.PropTypes;
+Filter.propTypes = { filter: string };
 
 function mapDispatchToProps(dispatch, ownProps) {
   const { filter } = ownProps;

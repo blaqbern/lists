@@ -1,14 +1,11 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
-const AddNew = ({
-  handleAddClick,
-  what,
-}) => {
+function AddNew({ handleAddClick, what }) {
   let inputText;
   return (
     <div>
       <input
-        ref={(node) => inputText = node}
+        ref={node => inputText = node}
         placeholder={`add new ${what}`}
       />
       <button
@@ -23,10 +20,11 @@ const AddNew = ({
       </button>
     </div>
   );
-};
+}
+const { func, string } = React.PropTypes;
 AddNew.propTypes = {
-  handleAddClick: PropTypes.func,
-  what: PropTypes.string,
+  handleAddClick: func,
+  what: string,
 };
 
 export default AddNew;

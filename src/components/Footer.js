@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Filter from '../containers/Filter';
 
@@ -17,7 +17,8 @@ function Footer({ tags }) {
     </div>
   );
 }
-Footer.propTypes = { tags: PropTypes.array };
+const { array } = React.PropTypes;
+Footer.propTypes = { tags: array };
 
 export default connect(
   state => ({ tags: state.tags })

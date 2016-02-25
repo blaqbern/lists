@@ -29,7 +29,7 @@ function mapStateToProps(state) {
   return {
     items: state.list.filter(item =>
       state.visibilityFilter === 'SHOW_ALL' ||
-      item.tags.indexOf(state.visibilityFilter) !== -1
+      item.tags.includes(state.visibilityFilter)
     ),
   };
 }

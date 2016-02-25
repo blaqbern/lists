@@ -9,12 +9,12 @@ const list = (state = [], action) => {
       ];
 
     case 'REMOVE_ITEM':
-      return state.filter((i) => i.id !== action.id);
+      return state.filter(i => i.id !== action.id);
 
     case 'TOGGLE_COMPLETED':
     case 'ADD_TAG':
       return state.map(
-        (i) => {
+        i => {
           if (i.id === action.id) {
             return item(i, action);
           }
