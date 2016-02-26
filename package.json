@@ -4,7 +4,8 @@
   "description": "A simle grocery-list app made with react",
   "main": "./src/main.js",
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
