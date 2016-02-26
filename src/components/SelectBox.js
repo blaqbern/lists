@@ -5,6 +5,9 @@ function SelectBox({
   options,
   what,
 }) {
+  function handleClick(option) {
+    return () => handleSelect(option);
+  }
   return (
     <div>
       <p>{`Select a ${what} to add`}</p>
@@ -12,7 +15,7 @@ function SelectBox({
         {options.map((o, index) =>
           <li
             key={index}
-            onClick={() => handleSelect(o)}
+            onClick={handleClick(o)}
             style={{ display: 'inline-block' }}
           >
             {`<${o}>`}

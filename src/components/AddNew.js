@@ -2,20 +2,17 @@ import React from 'react';
 
 function AddNew({ handleAddClick, what }) {
   let inputText;
+  const handleClick = () => {
+    handleAddClick(inputText.value.trim());
+    inputText.value = '';
+  };
   return (
     <div>
       <input
         ref={node => inputText = node}
         placeholder={`add new ${what}`}
       />
-      <button
-        onClick={
-          () => {
-            handleAddClick(inputText.value.trim());
-            inputText.value = '';
-          }
-        }
-      >
+      <button onClick={handleClick}>
         {'+'}
       </button>
     </div>
