@@ -21,7 +21,7 @@ class App extends Component {
     );
   }
 }
-const { object } = React.PropTypes;
-App.propTypes = { dispatch: object };
+const { func } = React.PropTypes;
+App.propTypes = { dispatch: func };
 
 export default App;
