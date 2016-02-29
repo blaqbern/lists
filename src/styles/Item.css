@@ -1,0 +1,14 @@
+@value red, green, blue from './shared/colors.css';
+
+.root {
+  border-bottom: 1px solid blue;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: green;
+}
+
+.pending {
+  color: red;
+}
