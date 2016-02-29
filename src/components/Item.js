@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import styles from '../styles/Item.css';
 
 const Item = ({
   text,
@@ -7,9 +8,12 @@ const Item = ({
   tags,
 }) => {
   return (
-    <div className="item">
+    <div className={styles.root}>
       <p
-        style={{ textDecoration: completed ? 'line-through' : 'none' }}
+        className={completed
+          ? styles.completed
+          : styles.pending
+        }
         onClick={handleClick}
       >
         {text}
